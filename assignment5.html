@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fifth Exercise</title>
+    </head>
+    <body>
+        <p id="test"></p>
+
+     <script type="text/javascript">
+        let t, alpha, beta, gama, delta, delta_t, x, y, answer;
+        alpha = (2/3);
+        beta = (1/3);
+        gama = 1;
+        delta = 1;
+        delta_t = 0.001
+        x=1;
+        y=1;
+
+        for(t=0; t.toFixed(3)<20; t+=0.001){
+
+            x += (delta_t * ((alpha * x)-(beta * x * y)));
+            y += delta_t * ((delta * x * y)-(gama * y));
+            t = Number(t.toFixed(3));
+            if(!((t*10)%1)){
+                 answer="Time = "+t.toFixed(3) + "&emsp;"+"Prey = "+ x.toFixed(2)+"&emsp;" + "Predator = "+y.toFixed(2) +"<br/>";
+                 document.getElementById("test").innerHTML+=answer;
+            }
+        }
+    
+    </script>
+
+    </body>
+    
+</html>
